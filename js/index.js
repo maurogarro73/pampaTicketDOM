@@ -75,7 +75,7 @@ for (let i = 0; i < ticketComprado.length; i++) {
                                 <p class="card-text">${ticketComprado[i].lugar}</p>
                             </div>
                             <div class="col text-center">
-                                <button type="button" class="btn btn-warning btn-lg m-4" data-bs-toggle="modal" data-bs-target="#comprar">Comprar Entrada</button>
+                                <button type="button" class="btn btn-warning btn-lg m-4" data-bs-toggle="modal" data-bs-target="#comprar">Mas Info</button>
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,6 @@ function comprar(opcionEntrada) {
     let id = opcionEntrada - 1;
     entradas[id].stock = entradas[id].stock - cantEntradas;
     ticketComprado.push(new Ticket(selectedTicket.id, selectedTicket.nombre, selectedTicket.info, selectedTicket.lugar, selectedTicket.precio * cantEntradas, cantEntradas, selectedTicket.img));
-    console.log(ticketComprado);
   }
 }
 
@@ -112,7 +111,6 @@ function finalizarCompra(){
       cont += ticketComprado[i].precio;
   }
   alert(`Total a pagar por todas las entradas es de $${cont}`);
-  console.log(ticketComprado);
 }
 
 /* Ordenar el array de menor precio a mayor */
@@ -125,5 +123,3 @@ const ticketOrdenados =  entradas.sort((a, b) => {
   }
   return 0;
 })
-
-console.log(ticketOrdenados);
