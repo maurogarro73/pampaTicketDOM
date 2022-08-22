@@ -38,9 +38,9 @@ while(opcionEntrada != 0){
   }
 
   opcionEntrada = Number(prompt(
-    `1) Babasonicos - $2900
-    2) El Mato - $5000
-    3) Tren Loco - $1500
+    `1) Bersuit Vergarabat - $2900
+    2) DIVIDIDOS - $5000
+    3) No te va gustar - $1500
     4) Celia Cruz - $1000
 
     0) Para finalizar`
@@ -98,7 +98,8 @@ function comprar(opcionEntrada) {
   }else {
     let id = opcionEntrada - 1;
     entradas[id].stock = entradas[id].stock - cantEntradas;
-    ticketComprado.push(new Ticket(selectedTicket.id, selectedTicket.nombre, selectedTicket.precio * cantEntradas, cantEntradas));
+    ticketComprado.push(new Ticket(selectedTicket.id, selectedTicket.nombre, selectedTicket.info, selectedTicket.lugar, selectedTicket.precio * cantEntradas, cantEntradas, selectedTicket.img));
+    console.log(ticketComprado);
   }
 }
 
